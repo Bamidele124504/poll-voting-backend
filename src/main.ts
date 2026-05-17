@@ -40,7 +40,13 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: 'http://localhost:4200',
+    origin: [
+      'http://localhost:4200',
+  
+      'https://poll-voting-app1.netlify.app',
+    ],
+  
+    credentials: true,
   });
   
   await app.listen(3000);
